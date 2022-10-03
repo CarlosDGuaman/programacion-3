@@ -11,26 +11,26 @@
             <div class="card-body p-5">
               <h2 class="text-uppercase text-center mb-5">Creacion de Usuario</h2>
 
-              <form action="" method="post">
-
+              <form action="{{route('login.store')}}" method="post">
+                @csrf
                 <div class="form-outline mb-4">
-                  <input required type="text" id="form3Example1cg" class="form-control form-control-lg" />
+                  <input required name="nombre"type="text" id="form3Example1cg" class="form-control form-control-lg" />
                   <label class="form-label" for="form3Example1cg">Nombre</label>
                 </div>
 
                 <div class="form-outline mb-4">
-                  <input required type="email" id="form3Example3cg" class="form-control form-control-lg" />
+                  <input required name="correo" type="email" id="form3Example3cg" class="form-control form-control-lg" />
                   <label class="form-label" for="form3Example3cg">Correo Electronico</label>
                 </div>
 
                 <div class="form-outline mb-4">
-                  <input required type="password" id="form3Example4cg" class="form-control form-control-lg" />
+                  <input required name="contraseña" type="password" id="form3Example4cg" class="form-control form-control-lg" />
                   <label class="form-label" for="form3Example4cg">Contraseña</label>
                 </div>
 
                 <div class="form-outline mb-4">
-                  <input required type="password" id="form3Example4cdg" class="form-control form-control-lg" />
-                  <label class="form-label" for="form3Example4cdg">Repita su Contraseña</label>
+                  <input required type="password" name="contraseña2" id="form3Example4cdg" class="form-control form-control-lg" />
+                  <label class="form-label" name="nombre" for="form3Example4cdg">Repita su Contraseña</label>
                 </div>
 
                 <div class="form-check d-flex justify-content-center mb-5">

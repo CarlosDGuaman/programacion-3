@@ -100,7 +100,7 @@
           <!-- Container wrapper -->
           <div class="container">
             <!-- Navbar brand -->
-            <a class="navbar-brand me-2" href="https://mdbgo.com/">
+            <a class="navbar-brand me-2" href="">
               <img
                 src="https://mdbcdn.b-cdn.net/img/logo/mdb-transaprent-noshadows.webp"
                 height="16"
@@ -134,7 +134,11 @@
               <!-- Left links -->
 
               <div class="d-flex align-items-center">
-                  Estas logeado
+                 @if (isset($nombre))
+                   Estas logead@ {{$nombre}}
+                 @else
+                 Disfruta el contenido
+                 @endif 
               </div>
             </div>
             <!-- Collapsible wrapper -->

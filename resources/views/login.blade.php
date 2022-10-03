@@ -11,18 +11,28 @@
             <div class="card-body p-5">
               <h2 class="text-uppercase text-center mb-5">Ingresar con Usuario</h2>
 
-              <form action="" method="post">
+              <form action="{{route('login.ingresar')}}" method="post">
+                @csrf
 
                 <div class="form-outline mb-4">
-                  <input type="email" id="form3Example3cg" class="form-control form-control-lg" />
+                  <input type="email" name="correo"id="form3Example3cg" class="form-control form-control-lg" />
                   <label class="form-label" for="form3Example3cg">Correo Electronico</label>
                 </div>
 
                 <div class="form-outline mb-4">
-                  <input type="password" id="form3Example4cg" class="form-control form-control-lg" />
+                  <input type="password" name="contraseña" id="form3Example4cg" class="form-control form-control-lg" />
                   <label class="form-label" for="form3Example4cg">Contraseña</label>
                 </div>
-
+                @if (isset($error))
+                  <div class="alert alert-danger" role="alert">
+                    Usuario o Contraseña invalidos
+                  </div>
+                @endif
+                @if (isset($registro))
+                  <div class="alert alert-success" role="alert">
+                    Se a registrado Correctamente
+                  </div>
+                @endif
                 <div class="form-check d-flex justify-content-center mb-5">
                   <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3cg" />
                   <label class="form-check-label" for="form2Example3g">
@@ -31,9 +41,8 @@
                 </div>
 
                 <div class="d-flex justify-content-center">
-                    <a class="btn btn-success btn-block btn-lg gradient-custom-4 text-body" href="{{route('index')}}">Iniciar Sesion</a>
-                  <!-- <button type="submit"
-                    class="btn btn-success btn-block btn-lg gradient-custom-4 text-body"></button> -->
+                  <button type="submit"
+                    class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Iniciar Sesion</button>
                 </div>
 
                 <p class="text-center text-muted mt-5 mb-0">No tienes Usuario? <a href="{{route('registro')}}"

@@ -32,3 +32,6 @@ Route::get('index', function () {
 Route::get('vista', function () {
     return view('vista');
 })->name('vista');
+
+Route::post('login.store', [App\Http\Controllers\LoginController::class, 'store'])->name('login.store');
+Route::post('login.ingresar', [App\Http\Controllers\LoginController::class, 'ingresar'])->name('login.ingresar');
